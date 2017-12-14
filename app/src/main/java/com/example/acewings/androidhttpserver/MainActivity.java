@@ -1,12 +1,10 @@
 package com.example.acewings.androidhttpserver;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -27,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     TextView infoIp;
     TextView infoMsg;
     String msgLog = "";
-    
+
     ServerSocket httpServerSocket;
 
     @Override
@@ -138,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
                         "<html><head></head>" +
                                 "<body>" +
                                 "<h1>"+h1+"</h1>" +
+                                "<h1>Click <a href='https://codeload.github.com/khaireddines/HTTP_SERVER_ANDROID_SAMPLE/zip/master'>here </a> you can get our SAMPLE code</h1>"+
                                 "</body></html>";
 
                 os.print("HTTP/1.0 200" + "\r\n");
@@ -145,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
                 os.print("Content length: " + response.length() + "\r\n");
                 os.print("\r\n");
                 os.print(response + "\r\n");
-
+                os.flush();
 
 
 
